@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Easter Egg
   layers:
   - Default
   - TransparentFX
