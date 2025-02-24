@@ -4259,7 +4259,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 686282521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd19092288f74ce408a7887152249f1e, type: 3}
+  m_Script: {fileID: 11500000, guid: d1d38546201ef4d769866910160bead2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puntoExtra: {fileID: 1074026077}
@@ -5114,7 +5114,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 1
+  near clip plane: 2
   far clip plane: 1000
   field of view: 91
   orthographic: 0
