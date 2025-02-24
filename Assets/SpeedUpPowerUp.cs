@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Speed : MonoBehaviour
+public class SpeedUpPowerUp : MonoBehaviour
 {
     
     public float speed;
