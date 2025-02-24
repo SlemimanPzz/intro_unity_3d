@@ -4259,7 +4259,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 686282521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd19092288f74ce408a7887152249f1e, type: 3}
+  m_Script: {fileID: 11500000, guid: d8fb5b8f816ce4ccbb7e9e37b5cdb4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puntoExtra: {fileID: 1074026077}
@@ -9959,7 +9959,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d83c53277de967e49b88cde3cbe2b2ca, type: 2}
+  - {fileID: 2100000, guid: 49bacf2cc9778004589af42d84598932, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10171,7 +10171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 234c71d1180eb6a49915e2a8b87a48d9, type: 2}
+  - {fileID: 2100000, guid: 44abf8e2aea254e469a675272df7feb4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
