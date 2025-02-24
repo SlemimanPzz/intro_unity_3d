@@ -14,19 +14,31 @@ public class SpeedUpPowerUp : MonoBehaviour
         if (player == null) return;
         Debug.Log($"Player detected{player.name}! Activating speed boost.");
         StartCoroutine(SpeedUp(player));
-        Destroy(gameObject); // Destroy power-up after activation
     }
 
 
     IEnumerator SpeedUp(Player target)
     {
-        Debug.Log("Speed is " + target.walkSpeed);
+        
+        Collider collider = GetComponent<Collider>();
+        if (collider != null) collider.enabled = false;
+        
+        Renderer[] powerUpRenderers = GetComponentsInChildren<Renderer>();
+        foreach (var r in powerUpRenderers)
+        {
+            r.enabled = false; 
+        }
+        
+        
         target.walkSpeed *= speed;
         target.runSpeed *= speed;
-        Debug.Log("Speed is " + target.walkSpeed);
+        
         yield return new WaitForSeconds(duration);
+        
         target.walkSpeed /= speed;
         target.runSpeed /= speed; 
-        Debug.Log("Ended :Speed is " + target.walkSpeed);
+        
+        
+        Destroy(gameObject);
     }
 }
