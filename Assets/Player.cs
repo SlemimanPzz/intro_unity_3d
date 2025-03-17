@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float defaultHeight = 2f;
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
+    public Animator animator;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -38,9 +39,26 @@ public class Player : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
+        if (characterController.isGrounded)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude));
+            animator.SetFloat("MotionSpeed", Mathf.Abs(moveDirection.magnitude)/10);
+            if (curSpeedX < 0)
+            {
+                animator.SetBool("Back", true);
+            }
+            else if (curSpeedX > 0)
+            {
+                animator.SetBool("Back", false);
+            }
+            animator.SetBool("Grounded", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("FreeFall", false);
+        }
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
+            animator.SetBool("Jump", true);
         }
         else
         {
