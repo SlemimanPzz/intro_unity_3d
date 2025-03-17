@@ -6713,6 +6713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunModel: {fileID: 1169911416}
+  gunName: bazooka
 --- !u!136 &1169911421
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6727,6 +6728,24 @@ CapsuleCollider:
   m_Height: 2.17
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1169911422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169911416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1674fee3f421e4fc1ab14cde996074d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4403300788382294653, guid: 2ae697edfeca64f5fab31620710f3460, type: 3}
+  firePoint: {fileID: 1292962779}
+  bulletSpeed: 20
+  fireRate: 0.5
+  gunName: bazoooka
+  isEquipped: 0
 --- !u!1 &1185299498
 GameObject:
   m_ObjectHideFlags: 0
@@ -7539,7 +7558,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292962779}
-  - component: {fileID: 1292962780}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -7562,22 +7580,6 @@ Transform:
   m_Father: {fileID: 1169911419}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1292962780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292962778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1674fee3f421e4fc1ab14cde996074d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4403300788382294653, guid: 2ae697edfeca64f5fab31620710f3460, type: 3}
-  firePoint: {fileID: 1292962779}
-  bulletSpeed: 20
-  fireRate: 0.5
 --- !u!1 &1388560352
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,40 +2,35 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Assign your bullet prefab in the inspector
-    public Transform firePoint;     // Empty GameObject at the gun's barrel for bullet spawn position
+    public GameObject bulletPrefab;
+    public Transform firePoint;
     public float bulletSpeed = 20f;
-    public float fireRate = 0.5f;   // Delay between shots
+    public float fireRate = 0.5f;
 
-    private float nextFireTime;
+    private float _nextFireTime;
+
+    [Header("Gun Settings")]
+    public string gunName;            // Unique name for each gun
+    public bool isEquipped = false;   // Tracks if this gun is equipped
 
     void Update()
     {
-        if (!Input.GetButtonDown("Fire1") || !(Time.time >= nextFireTime)) return;
+        if (!isEquipped || !Input.GetButtonDown("Fire1") || !(Time.time >= _nextFireTime)) return;
         Shoot();
-        nextFireTime = Time.time + fireRate;
+        _nextFireTime = Time.time + fireRate;
     }
 
     void Shoot()
     {
-        if (firePoint != null)
-        {
-            // Instantiate bullet at firePoint's position and rotation
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (firePoint == null) return;
+        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-            // Add velocity in the direction the gun faces
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.velocity = firePoint.forward * bulletSpeed;
-            }
-
-            // Destroy the bullet after 2 seconds
-            Destroy(bullet, 2f);
-        }
-        else
+        var rb = bullet.GetComponent<Rigidbody>();
+        if (rb != null)
         {
-            Debug.LogWarning("FirePoint not assigned on the gun!");
+            rb.velocity = firePoint.forward * bulletSpeed;
         }
+
+        Destroy(bullet, 2f);
     }
 }
