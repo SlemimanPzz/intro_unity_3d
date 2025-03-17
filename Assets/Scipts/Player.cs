@@ -43,14 +43,6 @@ public class Player : MonoBehaviour
         {
             animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude));
             animator.SetFloat("MotionSpeed", Mathf.Abs(moveDirection.magnitude)/10);
-            if (curSpeedX < 0)
-            {
-                animator.SetBool("Back", true);
-            }
-            else if (curSpeedX > 0)
-            {
-                animator.SetBool("Back", false);
-            }
             animator.SetBool("Grounded", true);
             animator.SetBool("Jump", false);
             animator.SetBool("FreeFall", false);
